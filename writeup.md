@@ -43,7 +43,7 @@ You're reading it!
 
 #### 1. Briefly state how you computed the camera matrix and distortion coefficients. Provide an example of a distortion corrected calibration image.
 
-The code for this step is contained in the first four code cells of the IPython notebook located [here](submission_code.ipynb#Calibration-matrix-computation).
+The code for this step is contained in the first four code cells of the IPython notebook located [here](submission-code.ipynb#Calibration-matrix-computation).
 
 I have created a class to encapsulate the camera parameters named `CameraParams`. This class has all the necessary camera parameters as its attributes
 
