@@ -43,7 +43,7 @@ You're reading it!
 
 #### 1. Briefly state how you computed the camera matrix and distortion coefficients. Provide an example of a distortion corrected calibration image.
 
-The code for this step is contained in the first four code cells of the IPython notebook located in the [](submission_code.ipynb#Calibration-matrix-computation).
+The code for this step is contained in the first four code cells of the IPython notebook located [here](submission_code.ipynb#Calibration-matrix-computation).
 
 I have created a class to encapsulate the camera parameters named `CameraParams`. This class has all the necessary camera parameters as its attributes
 
@@ -64,7 +64,7 @@ To demonstrate this step, I will describe how I apply the distortion correction 
 
 #### 2. Describe how (and identify where in your code) you used color transforms, gradients or other methods to create a thresholded binary image.  Provide an example of a binary image result.
 
-I have used color and gradient thresholds to generate a binary image. The various threshold functions are in [](submission-code.ipynb#Various-transforms) with the main threshold pipeline in `threshold()`  Within this function, I first generate a binary image obtained by thresholding the x, y gradient maps as well as the gradient magnitude and direction maps. I convert the original image to HLS color space and threshold the S channel. I finally combine these two threshold images to obtain the resulting binary image. Here's an example of my output for this step:
+I have used color and gradient thresholds to generate a binary image. The various threshold functions are in [here](submission-code.ipynb#Various-transforms) with the main threshold pipeline in `threshold()`  Within this function, I first generate a binary image obtained by thresholding the x, y gradient maps as well as the gradient magnitude and direction maps. I convert the original image to HLS color space and threshold the S channel. I finally combine these two threshold images to obtain the resulting binary image. Here's an example of my output for this step:
 
 ![alt text][image3]
 
@@ -82,7 +82,7 @@ The code to identify the lane lines is in the section [](submission-code.ipynb#L
 
 I first create two data structures names `Line` and `Lane`. `Line` has attributes that are used to store the important information returned by the pipeline. `Lane` contains attributes for the lane itself as well two `Line` objects for the left and right lane lines respectively.
 
-The function `sliding_window()` , in sub-section [](submission-code.ipynb#Sliding-window-search) performs a sliding window search on the warped binary image. In brief, this function identifies the peaks in the histogram of the lower half of the binary image and assigns these peaks as the line bases. It then searches upwards window-by-window and records the positions of the pixels where it finds significant bright pixels. These pixel locations are then used to fit lines and derive the coefficients for the same.
+The function `sliding_window()` , in sub-section [Sliding Window Search](submission-code.ipynb#Sliding-window-search) performs a sliding window search on the warped binary image. In brief, this function identifies the peaks in the histogram of the lower half of the binary image and assigns these peaks as the line bases. It then searches upwards window-by-window and records the positions of the pixels where it finds significant bright pixels. These pixel locations are then used to fit lines and derive the coefficients for the same.
 
 Here's an example of the line-fitting by this method:
 
@@ -96,7 +96,7 @@ Finally, the function `pipeline()` ties up these together to detect the lane and
 
 #### 5. Describe how (and identify where in your code) you calculated the radius of curvature of the lane and the position of the vehicle with respect to center.
 
-The functions to calculate lane attributes are in the sub-section [](submission-code.ipynb#Lane-attributes-functions).
+The functions to calculate lane attributes are in the sub-section [Lane attribute functions](submission-code.ipynb#Lane-attributes-functions).
 
 The function `getCurvature()` computes the curvature of the lane given the lane parameters. It computes the curvature individually for each lane line from their fit coefficients. The final curvature is the average of the two curvatures.
 
